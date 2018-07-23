@@ -14,3 +14,24 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.active > .icon{
+  color:  #488aff !important;
+}
+
+.active > .icon{
+  color:  #488aff !important;
+}
+.active > ion-icon{
+  color:  #488aff !important;
+}
+
+.not-active > .icon{
+  color:  #8c8c8c !important;
+}
+
+.not-active > .icon{
+  color:  #8c8c8c !important;
+}
+.not-active > ion-icon{
+  color:  #8c8c8c !important;
+}

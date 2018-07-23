@@ -35,7 +35,7 @@ import { Deeplinks } from '@ionic-native/deeplinks';
   providers: [
     StatusBar,
     SplashScreen, Deeplinks,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
   ]
 })
 export class AppModule { }

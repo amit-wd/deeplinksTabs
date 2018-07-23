@@ -12,6 +12,7 @@ import { ContactPage } from '../pages/contact/contact';
   templateUrl: 'app.html'
 })
 export class MyApp {
+
   rootPage: any = TabsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public deeplinks: Deeplinks, public events: Events) {
@@ -26,19 +27,14 @@ export class MyApp {
 
   deeplinksFunc() {
     this.deeplinks.route({
-      '/about-us': AboutPage,
-      '/uni': ContactPage,
+      '/about': AboutPage,
+      '/contact': ContactPage,
     }).subscribe(match => {
-      
-      if (match.$link.path == '/about-us') {
+      if (match.$link.path == '/about') {
         this.events.publish('tabs', 1);
-      } else {
+      } else if (match.$link.path == '/contact') {
         this.events.publish('tabs', 2);
       }
-
-      // match.$route - the route we matched, which is the matched entry from the arguments to route()
-      // match.$args - the args passed in the link
-      // match.$link - the full link data
     }, nomatch => {
       // nomatch.$link - the full link data
       console.error('Got a deeplink that didn\'t match', nomatch);
